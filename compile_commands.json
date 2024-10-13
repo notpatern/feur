@@ -1,0 +1,8 @@
+[
+{
+  "directory": "E:/Github/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\main.cpp.obj -c E:\\Github\\feur\\feur\\src\\main.cpp",
+  "file": "E:/Github/feur/feur/src/main.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/main.cpp.obj"
+}
+]
