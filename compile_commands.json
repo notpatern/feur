@@ -1,8 +1,20 @@
 [
 {
-  "directory": "E:/Github/feur",
-  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\main.cpp.obj -c E:\\Github\\feur\\feur\\src\\main.cpp",
-  "file": "E:/Github/feur/feur/src/main.cpp",
+  "directory": "C:/Users/rodie/Documents/GitHub/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\main.cpp.obj -c C:\\Users\\rodie\\Documents\\GitHub\\feur\\feur\\src\\main.cpp",
+  "file": "C:/Users/rodie/Documents/GitHub/feur/feur/src/main.cpp",
   "output": "CMakeFiles/feur.dir/feur/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/rodie/Documents/GitHub/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\Game.cpp.obj -c C:\\Users\\rodie\\Documents\\GitHub\\feur\\feur\\src\\Engine\\Game.cpp",
+  "file": "C:/Users/rodie/Documents/GitHub/feur/feur/src/Engine/Game.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/Engine/Game.cpp.obj"
+},
+{
+  "directory": "C:/Users/rodie/Documents/GitHub/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\State\\State.cpp.obj -c C:\\Users\\rodie\\Documents\\GitHub\\feur\\feur\\src\\Engine\\State\\State.cpp",
+  "file": "C:/Users/rodie/Documents/GitHub/feur/feur/src/Engine/State/State.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/Engine/State/State.cpp.obj"
 }
 ]
