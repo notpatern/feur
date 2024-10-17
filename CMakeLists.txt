@@ -6,7 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__USE_MINGW_ANSI_STDIO=1")
 
-add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/feur/src/main.cpp)
+
+
+add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/feur/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Game.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Game.hpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.hpp
+)
 
 include_directories(${CMAKE_SOURCE_DIR}/feur/vendor/sfml/include)
 
