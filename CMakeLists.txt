@@ -13,6 +13,12 @@ add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/feur/src/main.cpp
     ${CMAKE_SOURCE_DIR}/feur/src/Engine/Game.hpp
     ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.cpp
     ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.hpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/MenuState.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/MenuState.hpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/IClickable.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/IClickable.hpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/Button.cpp
+    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/Button.hpp
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/feur/vendor/sfml/include)
