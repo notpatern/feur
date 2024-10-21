@@ -1,20 +1,21 @@
 #pragma once
 #include "SFML/Graphics/RenderTarget.hpp"
-#include "SFML/System/Vector2.hpp"
 #include "State.hpp"
 #include "../Interactable/Button.hpp"
+#include <memory>
 
 class MenuState : public State {
 private:
-    sf::Sprite caca{new Texture()};
-    Button test{sf::Vector2i{0,0}, std::make_shared<sf::Sprite>()};
+    std::shared_ptr<sf::Image> testImage = std::make_shared<sf::Image>();
+    std::shared_ptr<sf::Image> testImageHovered = std::make_shared<sf::Image>();
+    Button* test;
 
 public:
     MenuState();
     ~MenuState() = default;
 
-    void Start() override;
-    void Update(sf::RenderTarget& target) override;
-    void FixedUpdate() override;
-    void Exit() override;
+    void start() override;
+    void update() override;
+    void render(sf::RenderTarget& target) override;
+    void exit() override;
 };

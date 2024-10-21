@@ -3,23 +3,44 @@
 #include "SFML/Window/Event.hpp"
 #include "SFML/Window/VideoMode.hpp"
 #include "SFML/Window/Window.hpp"
+#include <iostream>
+
+Game::~Game() {
+    delete window;
+}
 
 void Game::init() {
+    window = new sf::RenderWindow(sf::VideoMode(1200, 720), "feur", sf::Style::Default);
+    std::cout << "window created\n";
     stateStack.push(new MenuState());
+    std::cout << "menustate created\n";
 }
 
 void Game::run() {
-    sf::RenderWindow window{sf::VideoMode(1640, 900), "feur"};
     init();
 
-    while (window.isOpen()) {
-        sf::Event event;
+    while (window->isOpen()) {
+        update();
+        render();
+    }
+}
 
-        while(window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-            stateStack.top()->Update(window);
+void Game::updateSfmlEvents() {
+    if (window->pollEvent(event)) {
+        if (event.type == sf::Event::Closed) {
+            window->close();
         }
     }
+}
+
+void Game::update() {
+    stateStack.top()->update();
+}
+
+void Game::render() {
+    window->clear();
+
+    stateStack.top()->render(*window);
+
+    window->display();
 }

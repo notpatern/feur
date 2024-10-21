@@ -11,9 +11,11 @@ void IClickable::updateClickable() {
 }
 
 void IClickable::click() {
-    if (isHovered() && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+    m_mouseLeftState = sf::Mouse::isButtonPressed(sf::Mouse::Left);
+    if (isHovered() && (m_mouseLeftState && !m_dirtyMouseLeftState)) {
         onClick();
     }
+    m_dirtyMouseLeftState = m_mouseLeftState;
 }
 
 bool IClickable::isHovered() {

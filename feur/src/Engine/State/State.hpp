@@ -8,8 +8,8 @@ public:
     State();
     ~State();
 
-    virtual void Start() = 0;
-    virtual void Update(sf::RenderTarget& target) = 0;
-    virtual void FixedUpdate() = 0;
-    virtual void Exit() =  0;
+    virtual void start() = 0;
+    virtual void update() = 0;
+    virtual void render(sf::RenderTarget& target) = 0;
+    virtual void exit() =  0;
 };

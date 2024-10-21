@@ -9,8 +9,10 @@ private:
     sf::Vector2i m_position;
     sf::Vector2i m_bounds;
     sf::Event m_event;
-    bool m_isHovered;
+    bool m_isHovered{false};
     bool m_dirtyHoverState{false};
+    bool m_mouseLeftState{false};
+    bool m_dirtyMouseLeftState{false};
 
     void click();
     bool isHovered();
