@@ -2,10 +2,9 @@
 #include "SFML/System/Vector2.hpp"
 #include "SFML/Window/Mouse.hpp"
 
-IClickable::IClickable(sf::Vector2i position, sf::Vector2i bounds) : m_position{std::move(position)}, m_bounds{std::move(bounds)} {}
+IClickable::IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition) : m_position{position}, m_bounds{std::move(bounds)}, m_mousePosition{mousePosition} {}
 
 void IClickable::updateClickable() {
-    m_mousePosition = sf::Mouse::getPosition();
     hover();
     click();
 }

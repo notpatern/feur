@@ -12,21 +12,21 @@
 
 class Button : public IClickable {
 private:
-    sf::Texture* m_idleTexture = new sf::Texture();
-    sf::Texture* m_hoveredTexture = new sf::Texture();
-    sf::Texture* m_clickedTexture = new sf::Texture();
+    std::shared_ptr<sf::Texture> m_idleTexture = std::make_shared<sf::Texture>();
+    std::shared_ptr<sf::Texture> m_hoveredTexture = std::make_shared<sf::Texture>();
+    std::shared_ptr<sf::Texture> m_clickedTexture = std::make_shared<sf::Texture>();
 
-    sf::Sprite* m_currentSprite = new sf::Sprite();
-    sf::Sprite* m_idleSprite = new sf::Sprite();
-    sf::Sprite* m_hoveredSprite = new sf::Sprite();
-    sf::Sprite* m_clickedSprite = new sf::Sprite();
+    std::shared_ptr<sf::Sprite> m_currentSprite = std::make_shared<sf::Sprite>();
+    std::shared_ptr<sf::Sprite> m_idleSprite = std::make_shared<sf::Sprite>();
+    std::shared_ptr<sf::Sprite> m_hoveredSprite = std::make_shared<sf::Sprite>();
+    std::shared_ptr<sf::Sprite> m_clickedSprite = std::make_shared<sf::Sprite>();
 
     sf::Vector2i m_spritePosition;
 
     std::function<void()> m_clickDelegate;
 
 public:
-    Button(sf::Vector2i position, std::shared_ptr<sf::Image> idleImage, std::shared_ptr<sf::Image> hoveredImage = nullptr, std::shared_ptr<sf::Image> clickedImage = nullptr);
+    Button(sf::Vector2i& mousePosition, sf::Vector2i position, std::shared_ptr<sf::Image> idleImage, std::shared_ptr<sf::Image> hoveredImage = nullptr, std::shared_ptr<sf::Image> clickedImage = nullptr);
     ~Button();
 
     void update();

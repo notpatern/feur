@@ -1,11 +1,13 @@
 #pragma once
 
 #include "SFML/Graphics/RenderTarget.hpp"
+#include "SFML/System/Vector2.hpp"
 class State {
-private:
+protected:
+    sf::Vector2i& m_mousePosition;
 
 public:
-    State();
+    State(sf::Vector2i& mousePosition);
     ~State();
 
     virtual void start() = 0;

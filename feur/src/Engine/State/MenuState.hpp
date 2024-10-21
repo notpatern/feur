@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics/RenderTarget.hpp"
+#include "SFML/System/Vector2.hpp"
 #include "State.hpp"
 #include "../Interactable/Button.hpp"
 #include <memory>
@@ -11,7 +12,7 @@ private:
     Button* test;
 
 public:
-    MenuState();
+    MenuState(sf::Vector2i& mousePosition);
     ~MenuState() = default;
 
     void start() override;
