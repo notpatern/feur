@@ -10,6 +10,7 @@ private:
     std::shared_ptr<sf::Image> testImage = std::make_shared<sf::Image>();
     std::shared_ptr<sf::Image> testImageHovered = std::make_shared<sf::Image>();
     Button* test;
+    sf::Vector2i position{0, 0};
 
 public:
     MenuState(sf::Vector2i& mousePosition);

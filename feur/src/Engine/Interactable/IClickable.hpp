@@ -1,17 +1,11 @@
 #pragma once
 
 #include "SFML/System/Vector2.hpp"
-#include "SFML/Window/Event.hpp"
 
 class IClickable {
 private:
-    sf::Vector2i& m_mousePosition;
-    sf::Vector2i m_position;
     sf::Vector2i m_bounds;
-    sf::Event m_event;
-    bool m_isHovered{false};
     bool m_dirtyHoverState{false};
-    bool m_mouseLeftState{false};
     bool m_dirtyMouseLeftState{false};
 
     void click();
@@ -19,6 +13,11 @@ private:
     void hover();
 
 protected:
+    sf::Vector2i& m_position;
+    sf::Vector2i& m_mousePosition;
+    sf::Vector2i m_dirtyMousePosition;
+    bool m_mouseLeftState{false};
+    bool m_isHovered{false};
     virtual void onHover() = 0;
     virtual void onLeave() = 0;
     virtual void onClick() = 0;

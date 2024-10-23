@@ -1,6 +1,7 @@
 #include "IClickable.hpp"
 #include "SFML/System/Vector2.hpp"
 #include "SFML/Window/Mouse.hpp"
+#include <utility>
 
 IClickable::IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition) : m_position{position}, m_bounds{std::move(bounds)}, m_mousePosition{mousePosition} {}
 
