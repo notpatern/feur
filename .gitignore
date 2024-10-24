@@ -20,8 +20,9 @@
 *.out
 *.app
 
+CMakeCache.txt
 .cache/
 *.cmake
 CMakeFiles/
 MakeFile
-CMakeCache.txt
+
