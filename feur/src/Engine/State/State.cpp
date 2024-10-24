@@ -1,6 +1,7 @@
 #include "State.hpp"
+#include <stack>
 
-State::State(sf::Vector2i& mousePosition) : m_mousePosition{mousePosition} {
+State::State(sf::Vector2i& mousePosition, std::stack<State*>* stateStack) : m_mousePosition{mousePosition}, m_stateStack{stateStack} {
 
 }
 

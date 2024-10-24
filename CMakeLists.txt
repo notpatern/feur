@@ -6,20 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__USE_MINGW_ANSI_STDIO=1")
 
+file(GLOB_RECURSE SRC_FILES "${CMAKE_SOURCE_DIR}/feur/src/*.cpp" "${CMAKE_SOURCE_DIR}/feur/src/*.hpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/*.cpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/*.hpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/State/*.cpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/State/*.hpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/*.cpp" "${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/*.hpp")
 
-
-add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/feur/src/main.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Game.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Game.hpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/State.hpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/MenuState.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/State/MenuState.hpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/IClickable.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/IClickable.hpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/Button.cpp
-    ${CMAKE_SOURCE_DIR}/feur/src/Engine/Interactable/Button.hpp
-)
+add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 include_directories(${CMAKE_SOURCE_DIR}/feur/vendor/sfml/include)
 

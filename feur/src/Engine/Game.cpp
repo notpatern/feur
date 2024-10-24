@@ -11,7 +11,7 @@ Game::~Game() {
 void Game::init() {
     window = new sf::RenderWindow(sf::VideoMode(1200, 720), "feur", sf::Style::Default);
     m_mousePosition = sf::Mouse::getPosition(*window);
-    stateStack.push(new MenuState(m_mousePosition));
+    stateStack.push(new MenuState(m_mousePosition, &stateStack));
 }
 
 void Game::run() {

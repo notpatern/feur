@@ -4,6 +4,7 @@
 #include "State.hpp"
 #include "../Interactable/Button.hpp"
 #include <memory>
+#include <stack>
 
 class MenuState : public State {
 private:
@@ -13,7 +14,7 @@ private:
     sf::Vector2i position{0, 0};
 
 public:
-    MenuState(sf::Vector2i& mousePosition);
+    MenuState(sf::Vector2i& mousePosition, std::stack<State*>* stateStack);
     ~MenuState() = default;
 
     void start() override;
