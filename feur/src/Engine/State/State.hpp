@@ -6,10 +6,10 @@
 class State {
 protected:
     sf::Vector2i& m_mousePosition;
-    std::stack<State*>* m_stateStack;
+    std::stack<State*>& m_stateStack;
 
 public:
-    State(sf::Vector2i& mousePosition, std::stack<State*>* stateStack);
+    State(sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
     ~State();
 
     virtual void start() = 0;

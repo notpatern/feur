@@ -3,7 +3,8 @@
 #include "SFML/Window/Mouse.hpp"
 #include <utility>
 
-IClickable::IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition) : m_position{position}, m_bounds{std::move(bounds)}, m_mousePosition{mousePosition} {}
+IClickable::IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition, float scale)
+: m_position{position}, m_bounds{std::move(bounds)}, m_mousePosition{mousePosition}, m_scale{scale} {}
 
 void IClickable::updateClickable() {
     hover();
@@ -19,8 +20,8 @@ void IClickable::click() {
 }
 
 bool IClickable::isHovered() {
-    return ((m_mousePosition.x >= m_position.x && m_mousePosition.x <= m_position.x + m_bounds.x)
-        && (m_mousePosition.y >= m_position.y && m_mousePosition.y <= m_position.y + m_bounds.y));
+    return ((m_mousePosition.x >= m_position.x && m_mousePosition.x <= m_position.x + m_bounds.x * m_scale)
+        && (m_mousePosition.y >= m_position.y && m_mousePosition.y <= m_position.y + m_bounds.y * m_scale));
 }
 
 void IClickable::hover() {

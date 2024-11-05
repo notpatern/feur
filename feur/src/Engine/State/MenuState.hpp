@@ -8,13 +8,19 @@
 
 class MenuState : public State {
 private:
-    std::shared_ptr<sf::Image> testImage = std::make_shared<sf::Image>();
-    std::shared_ptr<sf::Image> testImageHovered = std::make_shared<sf::Image>();
-    Button* test;
-    sf::Vector2i position{0, 0};
+    std::shared_ptr<sf::Image> m_startImage = std::make_shared<sf::Image>();
+    std::shared_ptr<sf::Image> m_startHovered = std::make_shared<sf::Image>();
+    std::shared_ptr<sf::Image> m_startClicked = std::make_shared<sf::Image>();
+
+    std::shared_ptr<sf::Image> m_quitImage = std::make_shared<sf::Image>();
+    std::shared_ptr<sf::Image> m_quitHovered = std::make_shared<sf::Image>();
+    std::shared_ptr<sf::Image> m_quitClicked = std::make_shared<sf::Image>();
+
+    Button* m_startButton;
+    Button* m_quitButton;
 
 public:
-    MenuState(sf::Vector2i& mousePosition, std::stack<State*>* stateStack);
+    MenuState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
     ~MenuState() = default;
 
     void start() override;

@@ -6,7 +6,7 @@ class GameState : public State {
 private:
 
 public:
-    GameState(sf::Vector2i& mousePosition, std::stack<State*>* stateStack);
+    GameState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
     ~GameState() = default;
 
     void start() override;

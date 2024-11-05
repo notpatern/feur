@@ -5,6 +5,7 @@
 class IClickable {
 private:
     sf::Vector2i m_bounds;
+    float m_scale;
     bool m_dirtyHoverState{false};
     bool m_dirtyMouseLeftState{false};
 
@@ -24,6 +25,6 @@ protected:
     void updateClickable();
 
 public:
-    IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition);
+    IClickable(sf::Vector2i& position, sf::Vector2i bounds, sf::Vector2i& mousePosition, float scale);
     ~IClickable() = default;
 };

@@ -33,7 +33,7 @@ private:
     void onDrag() override;
 
 public:
-    Button(sf::Vector2i& mousePosition, sf::Vector2i& position, std::shared_ptr<sf::Image> idleImage, std::shared_ptr<sf::Image> hoveredImage = nullptr, std::shared_ptr<sf::Image> clickedImage = nullptr, bool isDraggable = false);
+    Button(sf::Vector2i& mousePosition, sf::Vector2i& position, std::shared_ptr<sf::Image> idleImage, std::shared_ptr<sf::Image> hoveredImage = nullptr, std::shared_ptr<sf::Image> clickedImage = nullptr, float scale = 1, bool isDraggable = false);
     ~Button();
 
     void update();

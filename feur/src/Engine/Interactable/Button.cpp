@@ -6,8 +6,9 @@
 Button::Button(sf::Vector2i& mousePosition, sf::Vector2i& position, std::shared_ptr<sf::Image> idleImage,
                std::shared_ptr<sf::Image> hoveredImage,
                std::shared_ptr<sf::Image> clickedImage,
+               float scale,
                bool isDraggable)
-            : IClickable(position, static_cast<sf::Vector2i>(idleImage->getSize()), mousePosition), IDraggable(), m_isDraggable{isDraggable} {
+            : IClickable(position, static_cast<sf::Vector2i>(idleImage->getSize()), mousePosition, scale), IDraggable(), m_isDraggable{isDraggable} {
     m_idleTexture->loadFromImage(*idleImage);
     if (hoveredImage == nullptr) {
         m_hoveredTexture->loadFromImage(*idleImage);
@@ -22,6 +23,11 @@ Button::Button(sf::Vector2i& mousePosition, sf::Vector2i& position, std::shared_
     m_idleSprite->setTexture(*m_idleTexture);
     m_hoveredSprite->setTexture(*m_hoveredTexture);
     m_clickedSprite->setTexture(*m_clickedTexture);
+
+    m_idleSprite->scale(scale, scale);
+    m_hoveredSprite->scale(scale, scale);
+    m_clickedSprite->scale(scale, scale);
+
     m_currentSprite = m_idleSprite;
     m_dragMovementModifier = {0, 0};
 }
