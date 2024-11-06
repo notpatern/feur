@@ -3,6 +3,7 @@
 #include "SFML/Graphics/RenderTarget.hpp"
 #include "SFML/System/Vector2.hpp"
 #include <stack>
+
 class State {
 protected:
     sf::Vector2i& m_mousePosition;

@@ -19,8 +19,8 @@ private:
     bool m_isActive{false};
 
 public:
-    Anchor(float rubberLength, sf::Vector2i position,std::shared_ptr<sf::Texture> texture, float scale = 1);
-    ~Anchor();
+    Anchor(float rubberLength, sf::Vector2i position, std::shared_ptr<sf::Texture> texture, float scale = 1);
+    ~Anchor() = default;
 
     [[nodiscard]] inline bool getState() const { return m_isActive; }
     [[nodiscard]] inline bool getRubberLength() const { return m_rubberLength; }

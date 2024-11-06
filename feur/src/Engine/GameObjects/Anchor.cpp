@@ -6,3 +6,11 @@ Anchor::Anchor(float rubberLength, sf::Vector2i position, std::shared_ptr<sf::Te
     m_sprite->setTexture(*m_texture);
     m_sprite->setScale(m_scale, m_scale);
 }
+
+void Anchor::update() {
+    m_sprite->setPosition(m_position.x, m_position.y);
+}
+
+void Anchor::render(sf::RenderTarget& target) {
+    target.draw(*m_sprite);
+}
