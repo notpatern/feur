@@ -12,7 +12,7 @@ private:
     sf::Vector2i m_velocity;
 
     std::shared_ptr<sf::Vector2i> playerSprite = std::make_shared<sf::Vector2i>();
-    std::vector<PlayerState> m_stateStacks;
+    //std::vector<PlayerState> m_stateStacks;
 public:
     Player();
     ~Player();

@@ -7,6 +7,24 @@
 },
 {
   "directory": "E:/Github/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -g -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\GameObjects\\Anchor.cpp.obj -c E:\\Github\\feur\\feur\\src\\Engine\\GameObjects\\Anchor.cpp",
+  "file": "E:/Github/feur/feur/src/Engine/GameObjects/Anchor.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/Engine/GameObjects/Anchor.cpp.obj"
+},
+{
+  "directory": "E:/Github/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -g -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\GameObjects\\AnchorGenerator.cpp.obj -c E:\\Github\\feur\\feur\\src\\Engine\\GameObjects\\AnchorGenerator.cpp",
+  "file": "E:/Github/feur/feur/src/Engine/GameObjects/AnchorGenerator.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/Engine/GameObjects/AnchorGenerator.cpp.obj"
+},
+{
+  "directory": "E:/Github/feur",
+  "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -g -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\GameObjects\\Player.cpp.obj -c E:\\Github\\feur\\feur\\src\\Engine\\GameObjects\\Player.cpp",
+  "file": "E:/Github/feur/feur/src/Engine/GameObjects/Player.cpp",
+  "output": "CMakeFiles/feur.dir/feur/src/Engine/GameObjects/Player.cpp.obj"
+},
+{
+  "directory": "E:/Github/feur",
   "command": "C:\\Mingw\\bin\\g++.exe  @CMakeFiles/feur.dir/includes_CXX.rsp  -D__USE_MINGW_ANSI_STDIO=1 -g -std=gnu++17 -o CMakeFiles\\feur.dir\\feur\\src\\Engine\\Interactable\\Button.cpp.obj -c E:\\Github\\feur\\feur\\src\\Engine\\Interactable\\Button.cpp",
   "file": "E:/Github/feur/feur/src/Engine/Interactable/Button.cpp",
   "output": "CMakeFiles/feur.dir/feur/src/Engine/Interactable/Button.cpp.obj"

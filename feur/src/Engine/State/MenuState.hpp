@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics/RenderTarget.hpp"
+#include "SFML/Graphics/Texture.hpp"
 #include "SFML/System/Vector2.hpp"
 #include "State.hpp"
 #include "../Interactable/Button.hpp"
@@ -8,6 +9,14 @@
 
 class MenuState : public State {
 private:
+    std::unique_ptr<sf::Image> m_title = std::make_unique<sf::Image>();
+    std::unique_ptr<sf::Texture> m_titleTexture = std::make_unique<sf::Texture>();
+    std::unique_ptr<sf::Sprite> m_titleSprite = std::make_unique<sf::Sprite>();
+
+    std::unique_ptr<sf::Image> m_backGround = std::make_unique<sf::Image>();
+    std::unique_ptr<sf::Texture> m_backGroundTexture = std::make_unique<sf::Texture>();
+    std::unique_ptr<sf::Sprite> m_backGroundSprite = std::make_unique<sf::Sprite>();
+
     std::shared_ptr<sf::Image> m_startImage = std::make_shared<sf::Image>();
     std::shared_ptr<sf::Image> m_startHovered = std::make_shared<sf::Image>();
     std::shared_ptr<sf::Image> m_startClicked = std::make_shared<sf::Image>();
