@@ -8,6 +8,7 @@
 class AnchorGenerator {
 private:
     int m_anchorSpreadRadius;
+    double m_deltaTime;
 
     std::unique_ptr<sf::Image> m_anchorImage = std::make_unique<sf::Image>();
     std::shared_ptr<sf::Texture> m_anchorTexture = std::make_shared<sf::Texture>();
@@ -21,11 +22,11 @@ private:
     int getRandomDistance(int min, int max);
 
 public:
-    AnchorGenerator(int anchorSpreadRadius);
+    AnchorGenerator(int anchorSpreadRadius, double& deltaTime);
     ~AnchorGenerator();
 
     void update();
     void render(sf::RenderTarget& target);
 
-    void updateAnchorPosition();
+    void updateAnchorPosition(float playerPositionCopy, float destination);
 };

@@ -1,9 +1,11 @@
 #include "AnchorGenerator.hpp"
 #include "SFML/Graphics/RenderTarget.hpp"
 #include "SFML/System/Vector2.hpp"
+#include "../Math/Math.h"
 #include <random>
 
-AnchorGenerator::AnchorGenerator(int anchorSpreadRadius) : m_anchorSpreadRadius{anchorSpreadRadius} {
+AnchorGenerator::AnchorGenerator(int anchorSpreadRadius, double& deltaTime)
+: m_anchorSpreadRadius{std::move(anchorSpreadRadius)}, m_deltaTime(deltaTime) {
     m_anchorImage->loadFromFile(".\\feur\\src\\Resources\\anchor.png");
     m_anchorTexture->loadFromImage(*m_anchorImage);
 
@@ -24,6 +26,21 @@ void AnchorGenerator::update() {
 void AnchorGenerator::render(sf::RenderTarget& target) {
     for (auto& anchor : m_queue) {
         anchor->render(target);
+    }
+}
+
+void AnchorGenerator::updateAnchorPosition(float playerPositionCopy, float destination) {
+    double lerpValue = 0;
+    while (lerpValue <= 1) {
+        for (auto& anchor : m_queue) {
+            sf::Vector2i currentPosition = anchor->getPosition();
+            sf::Vector2i newPosition =
+                {currentPosition.x, currentPosition.y
+                + static_cast<int>(Mathf::lerp(lerpValue, destination, playerPositionCopy))};
+
+            anchor->setPosition(newPosition);
+            lerpValue += m_deltaTime;
+        }
     }
 }
 
