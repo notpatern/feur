@@ -28,7 +28,7 @@ public:
     [[nodiscard]] inline sf::Vector2i getBounds() const { return m_bounds; }
 
     inline void switchState() { m_isActive = !m_isActive; }
-    inline void setPosition(sf::Vector2i& position) { m_position = position; }
+    inline void setPosition(sf::Vector2i&& position) { m_position = position; }
 
     void update();
     void render(sf::RenderTarget& target);

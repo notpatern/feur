@@ -3,7 +3,6 @@
 #include "SFML/System/Vector2.hpp"
 #include <SFML/Window.hpp>
 #include <memory>
-#include <vector>
 
 class Player {
 private:
@@ -11,8 +10,10 @@ private:
     sf::Vector2i m_bounds;
     sf::Vector2i m_velocity;
 
+    bool m_onAnchor{false};
+
     std::shared_ptr<sf::Vector2i> playerSprite = std::make_shared<sf::Vector2i>();
-    //std::vector<PlayerState> m_stateStacks;
+
 public:
     Player();
     ~Player();

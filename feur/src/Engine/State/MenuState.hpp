@@ -29,7 +29,7 @@ private:
     Button* m_quitButton;
 
 public:
-    MenuState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
+    MenuState(double& deltaTime, sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
     ~MenuState() = default;
 
     void start() override;

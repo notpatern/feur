@@ -1,7 +1,7 @@
 #include "GameState.hpp"
 #include "SFML/System/Vector2.hpp"
 
-GameState::GameState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack) : State(mousePosition, stateStack) {
+GameState::GameState(double& deltaTime, sf::Vector2i& mousePosition, std::stack<State*>& stateStack) : State(deltaTime, mousePosition, stateStack) {
 }
 
 void GameState::start() {

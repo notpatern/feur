@@ -27,6 +27,12 @@ void AnchorGenerator::render(sf::RenderTarget& target) {
     for (auto& anchor : m_queue) {
         anchor->render(target);
     }
+
+    if (m_queue.back()->getPosition().y > target.getSize().y) {
+        Anchor* anchor = m_queue.back();
+        m_queue.pop_back();
+        anchor->setPosition(getNextAnchorPosition());
+    }
 }
 
 void AnchorGenerator::updateAnchorPosition(float playerPositionCopy, float destination) {
@@ -38,7 +44,7 @@ void AnchorGenerator::updateAnchorPosition(float playerPositionCopy, float desti
                 {currentPosition.x, currentPosition.y
                 + static_cast<int>(Mathf::lerp(lerpValue, destination, playerPositionCopy))};
 
-            anchor->setPosition(newPosition);
+            anchor->setPosition(std::move(newPosition));
             lerpValue += m_deltaTime;
         }
     }

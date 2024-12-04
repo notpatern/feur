@@ -11,6 +11,6 @@ void Anchor::update() {
     m_sprite->setPosition(m_position.x, m_position.y);
 }
 
-void Anchor::render(sf::RenderTarget& target) {
+void Anchor::render(sf::RenderTarget&& target) {
     target.draw(*m_sprite);
 }

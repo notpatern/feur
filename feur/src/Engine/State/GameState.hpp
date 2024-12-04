@@ -5,9 +5,9 @@
 
 class GameState : public State {
 private:
-    AnchorGenerator m_anchorGen{800};
+    AnchorGenerator m_anchorGen{800, m_dt};
 public:
-    GameState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
+    GameState(double& deltaTime, sf::Vector2i& mousePosition, std::stack<State*>& stateStack);
     ~GameState() = default;
 
     void start() override;

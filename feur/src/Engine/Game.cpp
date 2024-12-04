@@ -3,6 +3,8 @@
 #include "SFML/Window/Event.hpp"
 #include "SFML/Window/VideoMode.hpp"
 #include "SFML/Window/Window.hpp"
+#include "State/MenuState.hpp"
+#include <iostream>
 
 Game::~Game() {
     delete window;
@@ -11,7 +13,8 @@ Game::~Game() {
 void Game::init() {
     window = new sf::RenderWindow(sf::VideoMode(1200, 640), "feur (1200, 640)", sf::Style::Default);
     m_mousePosition = sf::Mouse::getPosition(*window);
-    stateStack.push(new MenuState(m_mousePosition, stateStack));
+    stateStack.push(new MenuState(m_dt, m_mousePosition, stateStack));
+    m_dtClock.restart();
 }
 
 void Game::run() {
@@ -33,6 +36,8 @@ void Game::updateSfmlEvents() {
 }
 
 void Game::update() {
+    m_dt = m_dtClock.restart().asSeconds();
+    std::cout << m_dt << '\n';
     m_mousePosition = sf::Mouse::getPosition(*window);
     stateStack.top()->update();
 }

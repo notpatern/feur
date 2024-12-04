@@ -2,7 +2,7 @@
 #include "GameState.hpp"
 #include "SFML/System/Vector2.hpp"
 
-MenuState::MenuState(sf::Vector2i& mousePosition, std::stack<State*>& stateStack) : State(mousePosition, stateStack) {
+MenuState::MenuState(double& deltaTime, sf::Vector2i& mousePosition, std::stack<State*>& stateStack) : State(deltaTime, mousePosition, stateStack) {
     start();
 }
 
@@ -30,7 +30,7 @@ void MenuState::start() {
     m_startButton = new Button(m_mousePosition, *(new sf::Vector2i{462, 350}), m_startImage, m_startHovered, m_startClicked, 4);
     m_quitButton = new Button(m_mousePosition, *(new sf::Vector2i{610, 350}), m_quitImage, m_quitHovered, m_quitClicked, 4);
 
-    m_startButton->bindOnClick([this](){ m_stateStack.push(new GameState(m_mousePosition, m_stateStack)); });
+    m_startButton->bindOnClick([this](){ m_stateStack.push(new GameState(m_dt, m_mousePosition, m_stateStack)); });
     m_quitButton->bindOnClick([this](){ exit(); });
 }
 
