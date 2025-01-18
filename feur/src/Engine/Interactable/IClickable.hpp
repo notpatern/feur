@@ -4,8 +4,6 @@
 
 class IClickable {
 private:
-    sf::Vector2i m_bounds;
-    float m_scale;
     bool m_dirtyHoverState{false};
     bool m_dirtyMouseLeftState{false};
 
@@ -14,6 +12,8 @@ private:
     void hover();
 
 protected:
+    float m_scale;
+    sf::Vector2i m_bounds;
     sf::Vector2i& m_position;
     sf::Vector2i& m_mousePosition;
     sf::Vector2i m_dirtyMousePosition;

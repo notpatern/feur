@@ -48,8 +48,8 @@ void Button::onClick() {
     if (m_currentSprite != m_clickedSprite) {
         m_currentSprite = m_clickedSprite;
     }
-    m_dirtyMousePosition = m_mousePosition;
     m_clickDelegate();
+    m_dirtyMousePosition = m_mousePosition;
 }
 
 void Button::onHover() {

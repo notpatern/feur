@@ -4,7 +4,6 @@
 #include "SFML/Window/VideoMode.hpp"
 #include "SFML/Window/Window.hpp"
 #include "State/MenuState.hpp"
-#include <iostream>
 
 Game::~Game() {
     delete window;
@@ -37,7 +36,6 @@ void Game::updateSfmlEvents() {
 
 void Game::update() {
     m_dt = m_dtClock.restart().asSeconds();
-    std::cout << m_dt << '\n';
     m_mousePosition = sf::Mouse::getPosition(*window);
     stateStack.top()->update();
 }
